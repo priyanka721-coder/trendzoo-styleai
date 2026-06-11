@@ -574,7 +574,7 @@ export default function ProductDetailsModal({
                 {/* Similar Products Row */}
                 {similarProducts.length > 0 && (
                   <div className="pt-4 border-t border-white/5">
-                    <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-mono mb-2">Similar Trendzz Drops</span>
+                    <span className="block text-[10px] text-neutral-500 uppercase tracking-widest font-mono mb-2">Similar Trendzo Drops</span>
                     <div className="grid grid-cols-3 gap-3">
                       {similarProducts.map((p) => (
                         <div

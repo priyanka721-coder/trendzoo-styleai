@@ -1,5 +1,5 @@
 {
-  "name": "Trendzoo",
+  "name": "Trendzo",
   "description": "A premium, futuristic, and responsive e-commerce platform designed for Gen Z. Features responsive catalog search, advanced product filtering, step-by-step cart checkouts, persistent dashboards, dynamic promotional offer sheets, and an intelligent server-side Gemini-powered AI Shopping assistant.",
   "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

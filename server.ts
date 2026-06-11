@@ -29,7 +29,7 @@ function getAiClient(): GoogleGenAI | null {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey || apiKey === 'MY_GEMINI_API_KEY' || apiKey.trim() === '') {
     // Graceful fallback logger, no crash on startup
-    console.warn("[Gemini] GEMINI_API_KEY is not configured yet. The Trendzz AI chatbot will operate in Smart Offline Rule-based mode.");
+    console.warn("[Gemini] GEMINI_API_KEY is not configured yet. The Trendzo AI chatbot will operate in Smart Offline Rule-based mode.");
     return null;
   }
 
@@ -142,17 +142,17 @@ app.post('/api/chat', async (req, res) => {
     const selectedMatches = getRelevantProducts(message);
     const cleanedMatches = cleanProductsForAi(selectedMatches);
 
-    // System instruction injected with the *relevant* subset of the Trendzz catalog
-    const systemInstruction = `You are the exclusive Trendzz AI Shopping Assistant, a highly fashionable, futuristic personal stylist and active gadget guide.
+    // System instruction injected with the *relevant* subset of the Trendzo catalog
+    const systemInstruction = `You are the exclusive Trendzo AI Shopping Assistant, a highly fashionable, futuristic personal stylist and active gadget guide.
 Your style: futuristic, smart, friendly, witty, uses bold text, bullet points where applicable, and speaks directly to fashion-forward Gen Z audiences.
-Trendzz Store Product Catalog in stock (filtered relevant items):
+Trendzo Store Product Catalog in stock (filtered relevant items):
 ${JSON.stringify(cleanedMatches, null, 2)}
 
 Your Core Guidelines:
 1. Recommend actual real products from the catalog listed above matching high-street style trends, active gadgets, gaming, techwear, or lifestyle requests.
 2. IMPORTANT formatting rule: When recommending a product, ALWAYS mention its exact ID wrapped inside double brackets: e.g. [[prod-01]], [[prod-04]]. The frontend reads these brackets to display dynamic cards.
 3. Suggest fashion and gadgets according to requested aesthetics (e.g. Techwear, Minimalist, Cyberpunk, Gorpcore, Active, Gamer, Dorm-room, Workstation).
-4. If a user asks a question about Trendzz policies (shipping, returns), refer to this: We offer free express shipping on orders over $50, 30-day free returns/exchanges, secure encrypted checkout, 2-year warranty on electronics, and 12-hour dispatch.
+4. If a user asks a question about Trendzo policies (shipping, returns), refer to this: We offer free express shipping on orders over $50, 30-day free returns/exchanges, secure encrypted checkout, 2-year warranty on electronics, and 12-hour dispatch.
 5. If the user talks about completely irrelevant things, politely guide them back into shopping or styling.
 6. Keep answers concise (ideally under 130 words). Never invent products not listed in the provided catalog database. If the user asks for other catalog products not in the subset, invite them to use the catalog page Style Filters.`;
 
@@ -213,7 +213,7 @@ Your Core Guidelines:
     try {
       const fallback = getFallbackAnswering(req.body.message || "");
       return res.json({
-        text: fallback.text + "\n\n*(Trendzz system limits: Navigating via offline backup engine.)*",
+        text: fallback.text + "\n\n*(Trendzo system limits: Navigating via offline backup engine.)*",
         recommendedIds: fallback.recommendedIds,
         isFallback: true
       });
@@ -257,7 +257,7 @@ app.post('/api/scan-outfit', async (req, res) => {
 
     const textPart = {
       text: `Analyze this person's clothing style, background, age/gender vibes, posture, colors, and aesthetics in the photo.
-Select a complete set of 2 to 4 matching product items from our Trendzz Catalog that would look fantastic and coordinate optimally as a styled outfit.
+Select a complete set of 2 to 4 matching product items from our Trendzo Catalog that would look fantastic and coordinate optimally as a styled outfit.
 The recommended products MUST be chosen from this catalog list of real IDs:
 ${JSON.stringify(cleanCatalog, null, 2)}`
     };
@@ -273,7 +273,7 @@ ${JSON.stringify(cleanCatalog, null, 2)}`
           properties: {
             insights: {
               type: Type.STRING,
-              description: "A summary explaining in detail (about 80 to 120 words) which aesthetics from the photo inspired your curated Trendzz outfit choices, and why this exact complete bundle fits them perfectly."
+              description: "A summary explaining in detail (about 80 to 120 words) which aesthetics from the photo inspired your curated Trendzo outfit choices, and why this exact complete bundle fits them perfectly."
             },
             recommendedIds: {
               type: Type.ARRAY,
@@ -322,7 +322,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[Trendzz Fullstack Server] App listening on http://localhost:${PORT}`);
+    console.log(`[Trendzo Fullstack Server] App listening on http://localhost:${PORT}`);
   });
 }
 

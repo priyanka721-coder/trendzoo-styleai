@@ -36,9 +36,7 @@ export default function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   // User Authentication / Get Started welcome gate states
-  const [hasStarted, setHasStarted] = useState<boolean>(() => {
-    return localStorage.getItem('trendzooo_started') === 'true';
-  });
+  const [hasStarted, setHasStarted] = useState<boolean>(false);
   const [inputName, setInputName] = useState('');
   const [inputPref, setInputPref] = useState('Haute Luxury');
 
@@ -67,19 +65,19 @@ export default function App() {
 
   // Cart State (Persisted in LocalStorage)
   const [cart, setCart] = useState<CartItem[]>(() => {
-    const saved = localStorage.getItem('trendzz_cart') || localStorage.getItem('trendzo_cart');
+    const saved = localStorage.getItem('trendzo_cart');
     return saved ? JSON.parse(saved) : [];
   });
 
   // Wishlist State (Persisted in LocalStorage)
   const [wishlist, setWishlist] = useState<string[]>(() => {
-    const saved = localStorage.getItem('trendzz_wishlist') || localStorage.getItem('trendzo_wishlist');
+    const saved = localStorage.getItem('trendzo_wishlist');
     return saved ? JSON.parse(saved) : [];
   });
 
   // Order Records State (Persisted in LocalStorage with initial dummy order)
   const [orders, setOrders] = useState<Order[]>(() => {
-    const saved = localStorage.getItem('trendzz_orders') || localStorage.getItem('trendzo_orders');
+    const saved = localStorage.getItem('trendzo_orders');
     if (saved) return JSON.parse(saved);
     
     // Initial dummy historic orders for rich visualization on startup
@@ -150,7 +148,7 @@ export default function App() {
 
   // Active User Profile State (Editable)
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
-    const saved = localStorage.getItem('trendzz_profile') || localStorage.getItem('trendzo_profile');
+    const saved = localStorage.getItem('trendzo_profile');
     if (saved) return JSON.parse(saved);
     
     return {
@@ -194,19 +192,19 @@ export default function App() {
 
   // Sync state with localStorage
   useEffect(() => {
-    localStorage.setItem('trendzz_cart', JSON.stringify(cart));
+    localStorage.setItem('trendzo_cart', JSON.stringify(cart));
   }, [cart]);
 
   useEffect(() => {
-    localStorage.setItem('trendzz_wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('trendzo_wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
 
   useEffect(() => {
-    localStorage.setItem('trendzz_orders', JSON.stringify(orders));
+    localStorage.setItem('trendzo_orders', JSON.stringify(orders));
   }, [orders]);
 
   useEffect(() => {
-    localStorage.setItem('trendzz_profile', JSON.stringify(userProfile));
+    localStorage.setItem('trendzo_profile', JSON.stringify(userProfile));
   }, [userProfile]);
 
   // Flash sale countdown ticking
@@ -279,7 +277,7 @@ export default function App() {
     setAppliedCoupon(null);
     setIsCheckoutOpen(false);
     setActivePage('dashboard');
-    alert(`Order ${completedOrder.id} placed successfully! Thank you for shopping with Trendzz.`);
+    alert(`Order ${completedOrder.id} placed successfully! Thank you for shopping with Trendzo.`);
   };
 
   // Coupon evaluation
@@ -564,7 +562,7 @@ export default function App() {
                     <span className="inline-block text-[9px] font-mono tracking-widest bg-red-100 text-red-600 font-bold px-3 py-1 rounded-md uppercase">
                       CRITICAL PRICE DROPS
                     </span>
-                    <h2 className="font-display font-extrabold text-xl md:text-2xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Trendzz Midnight Flash Sale</h2>
+                    <h2 className="font-display font-extrabold text-xl md:text-2xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Trendzo Midnight Flash Sale</h2>
                     <p className="text-xs text-neutral-600 max-w-sm">Quantities are microscopic. Buy immediately before pricing resumes standard values.</p>
                   </div>
 
@@ -643,7 +641,7 @@ export default function App() {
               <section id="customer-testimonials" className="max-w-7xl mx-auto px-4 md:px-6 text-left space-y-6">
                 <div>
                   <h2 className="font-display font-bold text-2xl text-white">Stylist Testimonials</h2>
-                  <p className="text-xs text-neutral-500 mt-1">Check out reviews from verified Trendzz shoppers.</p>
+                  <p className="text-xs text-neutral-500 mt-1">Check out reviews from verified Trendzo shoppers.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1217,7 +1215,7 @@ export default function App() {
                             {o.trackingNumber && (
                               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[10px] text-neutral-400">
                                 <div>
-                                  <span className="block font-mono">Carrier: TRENDZZ EXPRESS</span>
+                                  <span className="block font-mono">Carrier: TRENDZO EXPRESS</span>
                                   <span className="block font-sans">Tracking: <strong className="text-white font-mono">{o.trackingNumber}</strong></span>
                                 </div>
                                 <span className="text-blue-400 hover:text-white transition-colors cursor-pointer text-right flex items-center gap-1 font-bold">
@@ -1298,7 +1296,7 @@ export default function App() {
               id="offers-viewport"
             >
               <div className="text-center max-w-xl mx-auto space-y-3">
-                <h1 className="font-display font-extrabold text-3xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Trendzz Seasonal Drops & Coupons</h1>
+                <h1 className="font-display font-extrabold text-3xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Trendzo Seasonal Drops & Coupons</h1>
                 <p className="text-xs text-neutral-600 leading-relaxed">
                   Unlock supreme discounts. Below are copyable code slots and limited-time promotional bundles configured store-wide.
                 </p>
@@ -1339,7 +1337,7 @@ export default function App() {
               {/* Combo Offers banners */}
               <div className="rounded-3xl bg-gradient-to-br from-neutral-50 via-white to-pink-50/10 p-8 md:p-12 border border-neutral-200 text-left flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
                 <div className="space-y-3 max-w-lg">
-                  <span className="text-[10px] font-mono uppercase tracking-widest bg-brand-rose/15 text-brand-rose font-bold px-2.5 py-1 rounded">TRENDZOOO Style Mixers</span>
+                  <span className="text-[10px] font-mono uppercase tracking-widest bg-brand-rose/15 text-brand-rose font-bold px-2.5 py-1 rounded">TRENDZO Style Mixers</span>
                   <h3 className="font-serif italic font-bold text-xl md:text-2xl text-neutral-950">Synergy Coordinate Bundle</h3>
                   <p className="text-xs text-neutral-600 leading-relaxed">
                     Elevate your fashion identity! Customize a set using our Style Mixer on any product. Bundle matching Clothes, Shoes, and Jewelry together to enjoy a <strong>flat 15% discount</strong> on checkout instantly.
@@ -1373,9 +1371,9 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-purple-600/5 opacity-50" />
                 <div className="max-w-2xl mx-auto space-y-4">
                   <span className="text-[10px] font-mono uppercase tracking-widest bg-blue-50 text-blue-600 font-bold px-2.5 py-1 rounded">Our Story</span>
-                  <h1 className="font-display font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight animate-pulse">About TRENDZZ.</h1>
+                  <h1 className="font-display font-extrabold text-3xl md:text-4xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight animate-pulse">About Trendzo.</h1>
                   <p className="text-xs md:text-sm text-neutral-600 leading-relaxed">
-                    Founded in 2026, Trendzz represents a bold visual reimagining of dynamic internet retail. We identify that modern, digitally-native buyers value speed, transparency, and high aesthetic cohesion equally. Our catalog rejects clunky options to showcase and deliver premium accessories, functional outerwear, and advanced acoustics designed for trendsetters.
+                    Founded in 2026, Trendzo represents a bold visual reimagining of dynamic internet retail. We identify that modern, digitally-native buyers value speed, transparency, and high aesthetic cohesion equally. Our catalog rejects clunky options to showcase and deliver premium accessories, functional outerwear, and advanced acoustics designed for trendsetters.
                   </p>
                 </div>
               </section>
@@ -1451,7 +1449,7 @@ export default function App() {
                       </li>
                       <li className="flex items-center gap-3">
                         <Mail className="w-4 h-4 text-purple-400 flex-shrink-0" />
-                        <span>support@trendzz.com</span>
+                        <span>support@trendzo.com</span>
                       </li>
                     </ul>
                   </div>
@@ -1464,7 +1462,7 @@ export default function App() {
                     
                     <div className="z-10 text-center space-y-1 cursor-pointer">
                       <Globe className="w-8 h-8 text-blue-500 mx-auto animate-spin" style={{ animationDuration: '30s' }} />
-                      <span className="block text-[10px] font-mono text-neutral-400 uppercase tracking-widest font-bold">Trendzz Global Headquarter</span>
+                      <span className="block text-[10px] font-mono text-neutral-400 uppercase tracking-widest font-bold">Trendzo Global Headquarter</span>
                       <p className="text-[9px] text-neutral-600 font-mono">Latitude: 37°23'34\" N | Longitude: 122°01'02\" W</p>
                     </div>
                   </div>
@@ -1611,7 +1609,7 @@ export default function App() {
 
               {/* Title & Slogan */}
               <h1 className="font-serif italic font-bold text-4xl text-white tracking-tight uppercase">
-                TRENDZOOO
+                Trendzo
               </h1>
               <p className="text-[10px] text-[#B76E79] mt-2 font-mono uppercase tracking-widest font-black">
                 Wear Your Vibe. Own Your Style.
@@ -1619,7 +1617,7 @@ export default function App() {
 
               <div className="my-5 border-b border-white/5 pb-3">
                 <p className="text-xs text-neutral-300 leading-relaxed max-w-sm mx-auto">
-                  Welcome to TRENDZOOO's luxury catalog. Establish your identity below to access the streetwear floor and unlock advanced custom coordinate tools.
+                  Welcome to Trendzo's luxury catalog. Establish your identity below to access the streetwear floor and unlock advanced custom coordinate tools.
                 </p>
               </div>
 
@@ -1675,9 +1673,9 @@ export default function App() {
                     setUserProfile(prev => ({
                       ...prev,
                       name: finalName,
-                      email: `${finalName.toLowerCase().replace(/\s+/g, '')}@trendzooo.com`
+                      email: `${finalName.toLowerCase().replace(/\s+/g, '')}@trendzo.com`
                     }));
-                    localStorage.setItem('trendzooo_started', 'true');
+                    localStorage.setItem('trendzo_started', 'true');
                     setHasStarted(true);
                   }}
                   className="w-full mt-6 py-3.5 rounded-xl bg-[#B76E79] hover:bg-[#c97f8a] text-white font-black text-xs tracking-widest uppercase transition-all duration-300 shadow-lg active:scale-98 flex items-center justify-center gap-1.5 cursor-pointer"

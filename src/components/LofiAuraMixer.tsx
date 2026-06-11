@@ -297,7 +297,7 @@ export default function LofiAuraMixer() {
                   <Sliders className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-display font-black text-sm tracking-tight text-white leading-none">Trendzz Aura Synth</h4>
+                  <h4 className="font-display font-black text-sm tracking-tight text-white leading-none">Trendzo Aura Synth</h4>
                   <span className="text-[9px] font-mono text-neutral-400">Workspace Sound Mixer</span>
                 </div>
               </div>

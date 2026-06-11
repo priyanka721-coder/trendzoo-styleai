@@ -21,7 +21,7 @@ export default function Footer({ onNavigate, onOpenChat }: FooterProps) {
   ];
 
   const quickLinks = [
-    { label: "About TRENDZOOO", page: "about" },
+    { label: "About Trendzo", page: "about" },
     { label: "Trending Deals", page: "offers" },
     { label: "Contact Support", page: "contact" },
     { label: "User Dashboard", page: "dashboard" }
@@ -42,7 +42,7 @@ export default function Footer({ onNavigate, onOpenChat }: FooterProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12 border-b border-white/5">
           {/* Newsletter Box */}
           <div className="lg:col-span-5 space-y-4">
-            <h3 className="font-display font-bold text-lg text-white">Join the TRENDZOOO Club</h3>
+            <h3 className="font-display font-bold text-lg text-white">Join the Trendzo Club</h3>
             <p className="text-sm text-neutral-400">
               Get 20% off on your first order. Subscribe for limited edition drops, flash sale alerts, and AI styling updates!
             </p>
@@ -86,11 +86,11 @@ export default function Footer({ onNavigate, onOpenChat }: FooterProps) {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => onNavigate('home')}>
               <span className="text-2xl font-black tracking-tighter italic bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent hover:opacity-90 transition-opacity duration-300">
-                TRENDZOOO.
+                Trendzo.
               </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-              TRENDZOOO is the definitive luxury fashion hub bringing premium streetwear, elite footwear, therapeutic slippers, and fine jewelry under one ultra-modern e-commerce checkout experience. Crafted specifically for style-conscious individuals.
+              Trendzo is the definitive luxury fashion hub bringing premium streetwear, elite footwear, therapeutic slippers, and fine jewelry under one ultra-modern e-commerce checkout experience. Crafted specifically for style-conscious individuals.
             </p>
             <div className="flex items-center gap-3">
               <button
@@ -151,7 +151,7 @@ export default function Footer({ onNavigate, onOpenChat }: FooterProps) {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-purple-400 flex-shrink-0" />
-                <span className="text-xs text-neutral-400">support@trendzooo.com</span>
+                <span className="text-xs text-neutral-400">support@trendzo.com</span>
               </li>
             </ul>
           </div>
@@ -161,7 +161,7 @@ export default function Footer({ onNavigate, onOpenChat }: FooterProps) {
         {/* Bottom Segment: Copyright & Secure Badges */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs text-neutral-500">
           <div>
-            &copy; {currentYear} TRENDZOOO Inc. All rights reserved. Designed to wear your vibe.
+            &copy; {currentYear} Trendzo Inc. All rights reserved. Designed to wear your vibe.
           </div>
           
           {/* Secure Badges & Payment options */}

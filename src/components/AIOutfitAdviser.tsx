@@ -131,7 +131,7 @@ export default function AIOutfitAdviser({
       "Interpreting facial/aesthetic tone balance...",
       "Matching posture style to our active silhouettes...",
       "Extracting color hues and contrast signatures...",
-      "Cross-referencing Trendzz inventory database...",
+      "Cross-referencing Trendzo inventory database...",
       "Finalizing coordinated premium wardrobe recommendations..."
     ];
 

@@ -629,7 +629,7 @@ export const coupons: Coupon[] = [
     minimumSpend: 0
   },
   {
-    code: "TRENDZZ10",
+    code: "TRENDZO10",
     discountPercent: 10,
     description: "Sleek discount! Slices 10% off items store-wide.",
     minimumSpend: 50
@@ -707,8 +707,8 @@ export const reviews: Review[] = [
 
 export const FAQData = [
   {
-    question: "Is shopping on Trendzz safe and encrypted?",
-    answer: "Absolutely! All payment routes and user sessions on Trendzz are fully audited and protected under robust End-to-End SSL encryption protocols. We NEVER store credit card keys; they are safely proxied with zero exposure."
+    question: "Is shopping on Trendzo safe and encrypted?",
+    answer: "Absolutely! All payment routes and user sessions on Trendzo are fully audited and protected under robust End-to-End SSL encryption protocols. We NEVER store credit card keys; they are safely proxied with zero exposure."
   },
   {
     question: "What is your standard return and exchange policy?",
@@ -724,6 +724,6 @@ export const FAQData = [
   },
   {
     question: "Does the AI Shopping Assistant recommend actual inventory?",
-    answer: "Yes! Our integrated Gemini AI Stylist examines Trendzz's actual real-time stock codes, prices, and size parameters to find appropriate fashion, footwear, or gadetry combinations fitted perfectly for your budget or styles."
+    answer: "Yes! Our integrated Gemini AI Stylist examines Trendzo's actual real-time stock codes, prices, and size parameters to find appropriate fashion, footwear, or gadetry combinations fitted perfectly for your budget or styles."
   }
 ];

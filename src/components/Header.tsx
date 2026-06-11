@@ -106,7 +106,7 @@ export default function Header({
             className="flex items-center gap-1.5 cursor-pointer group"
           >
             <span className="text-2xl font-black tracking-tighter italic bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity duration-300">
-              TRENDZoo
+              Trendzo
             </span>
           </div>
 

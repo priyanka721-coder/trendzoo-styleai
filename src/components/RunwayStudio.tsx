@@ -113,7 +113,7 @@ export default function RunwayStudio({
             3D RUNWAY EXPERIMENT
           </div>
           <h2 className="font-display font-black text-3xl md:text-4xl text-neutral-900 uppercase tracking-tight mt-1.5">
-            TRENDZOOO RUNWAY GENERATOR
+            TRENDZO RUNWAY GENERATOR
           </h2>
           <p className="text-xs text-neutral-500 max-w-2xl mt-1 leading-relaxed">
             Drag, match, and orchestrate custom luxury sets. Unlock an <strong className="text-[#C5A880]">automatic 15% discount</strong> when coordinating two or more streetwear components.

@@ -47,7 +47,7 @@ export default function AIChatBot({
       {
         id: 'msg-init',
         sender: 'assistant',
-        text: "Hey! I am your **Trendzz AI Stylist**. ⚡ \n\nI can recommend streetwear, gadgets, and accessories fitted perfectly to your lifestyle. Try asking me for 'cool techwear outfits', 'rugged active watch', or 'esports upgrades'! How are we dressing today?",
+        text: "Hey! I am your **Trendzo AI Stylist**. ⚡ \n\nI can recommend streetwear, gadgets, and accessories fitted perfectly to your lifestyle. Try asking me for 'cool techwear outfits', 'rugged active watch', or 'esports upgrades'! How are we dressing today?",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -234,7 +234,7 @@ export default function AIChatBot({
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                    Trendzz AI Assistant
+                    Trendzo AI Assistant
                     <span className="text-[9px] font-mono font-medium px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400">Gemini 3.5</span>
                   </div>
                   <div className="text-[10px] text-neutral-400">Styling advice & product discovery</div>
@@ -388,7 +388,7 @@ export default function AIChatBot({
                   value={inputMessage}
                   id="chatbot-input"
                   onChange={(e) => setInputMessage(e.target.value)}
-                  placeholder="Ask Trendzz AI Stylist..."
+                  placeholder="Ask Trendzo AI Stylist..."
                   className="flex-1 text-xs py-2.5 px-4 rounded-xl glass-input placeholder-neutral-500"
                 />
 
